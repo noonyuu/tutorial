@@ -12,6 +12,28 @@ fn main() {
 
   // ------------------------------- 定数 -------------------------------
   // 定数にはmutを使えない: 定数は標準で不変であるだけでなく常に不変
-    const MAX_POINTS: u32 = 100_000;
-    println!("MAX_POINTS is {MAX_POINTS}");
+    // const MAX_POINTS: u32 = 100_000;
+    // println!("MAX_POINTS is {MAX_POINTS}");
+  
+  // ------------------------------- シャドーイング -------------------------------
+  // 同じスコープ内にて前に宣言した変数と同じ名前を利用して新たな変数を再宣言できる機能(1番目の変数を覆い隠す)
+  // 型を変更したいが内容を変えないような変数を同じ名前で使うことができる
+    let x = 5;
+
+    let x = x + 1;
+
+    {
+      let x = x * 2;
+      println!("x is {x}");
+    }
+
+    println!("x is {x}");
+
+    let spaces = "   ";
+    let spaces = spaces.len(); // これはシャドーイングなので&strのspacesを使って計算して、新しくusize型のspacesを作り直しているからOK
+    println!("spaces is {spaces}");
+
+    // let mut spaces = "   "; // この時点でspacesは&str型
+    // spaces = spaces.len(); // 同じ変数に別の方の値を入れることはできない
+    // println!("spaces is {spaces}");
 }
