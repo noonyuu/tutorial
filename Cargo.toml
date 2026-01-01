@@ -6,5 +6,9 @@ edition = "2024"
 [dependencies]
 
 [[bin]]
-name = "variables_mutability"
-path = "src/variables_mutability.rs"
+name = "1_variables_mutability"
+path = "src/1_variables_mutability.rs"
+
+[[bin]]
+name = "2_data_types"
+path = "src/2_data_types.rs"
