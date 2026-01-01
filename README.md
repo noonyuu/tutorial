@@ -19,3 +19,5 @@ name = "ファイル名"
 path = "Cargo.tomlから見た相対パス"
 
 cargo run --bin ファイル名
+
+## 変数と可変性
