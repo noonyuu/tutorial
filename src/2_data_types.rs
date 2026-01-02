@@ -46,12 +46,16 @@ fn main() {
 
   println!("Please enter an array index.");
 
+  // 空の文字列 String を作成
   let mut index = String::new();
 
   io::stdin()
+  // 標準入力から値を読み込む
+  // &mut index は index のミュータブルな参照を渡している
       .read_line(&mut index)
       .expect("Failed to read line");
 
+  // rustの配列の添字(a[index])はusize型であるため、usize型に変換する
   let index: usize = index
       .trim()
       .parse()
