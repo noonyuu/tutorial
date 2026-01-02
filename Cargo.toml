@@ -12,3 +12,7 @@ path = "src/1_variables_mutability.rs"
 [[bin]]
 name = "2_data_types"
 path = "src/2_data_types.rs"
+
+[[bin]]
+name = "3_functions"
+path = "src/3_functions.rs"
