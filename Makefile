@@ -5,3 +5,6 @@ cr2:
 
 cr3:
 	cargo run --bin 3_functions
+
+cr4:
+	cargo run --bin 4_control_flow

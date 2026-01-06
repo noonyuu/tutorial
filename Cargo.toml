@@ -16,3 +16,7 @@ path = "src/2_data_types.rs"
 [[bin]]
 name = "3_functions"
 path = "src/3_functions.rs"
+
+[[bin]]
+name = "4_control_flow"
+path = "src/4_control_flow.rs"
