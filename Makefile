@@ -8,3 +8,7 @@ cr3:
 
 cr4:
 	cargo run --bin 4_control_flow
+
+cr5:
+	cargo run --bin 5_ownership
+	

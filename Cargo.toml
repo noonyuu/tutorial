@@ -20,3 +20,7 @@ path = "src/3_functions.rs"
 [[bin]]
 name = "4_control_flow"
 path = "src/4_control_flow.rs"
+
+[[bin]]
+name = "5_ownership"
+path = "src/5_ownership.rs"
