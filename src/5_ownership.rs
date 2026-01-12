@@ -23,7 +23,11 @@ fn main() {
   // Stringは所有権を持つので、関数に渡すと所有権が移動する
   // i32はCopy トレイトを持つので、関数に渡すと値がコピーされる
 
-} // ここでxがスコープを抜け、sもスコープを抜ける。ただし、sの値はムーブされているので、何も特別なことは起こらない。
+  // 戻り値とスコープ
+  let s1 = gives_ownership();         // gives_ownershipは、戻り値をs1にムーブする
+  let s2 = String::from("hello");     // s2がスコープに入る
+  let s3 = takes_and_gives_back(s2);  // s2はtakes_and_gives_backにムーブされ戻り値もs3にムーブされる
+} 
 
 fn takes_ownership(some_string: String) { // some_stringがスコープに入る。
     println!("{}", some_string);
@@ -32,3 +36,15 @@ fn takes_ownership(some_string: String) { // some_stringがスコープに入る
 fn makes_copy(some_integer: i32) { // some_integerがスコープに入る
     println!("{}", some_integer);
 } // ここでsome_integerがスコープを抜ける。何も特別なことはない。
+
+fn gives_ownership() -> String {             // gives_ownershipは、戻り値を
+                                             // 呼び出した関数にムーブする
+    let some_string = String::from("hello"); // some_stringがスコープに入る
+    some_string                              // some_stringが返され、呼び出し元関数に
+                                             // ムーブされる
+}
+
+// takes_and_gives_backは、Stringを一つ受け取り、返す。
+fn takes_and_gives_back(a_string: String) -> String { // a_stringがスコープに入る。
+    a_string  // a_stringが返され、呼び出し元関数にムーブされる
+}
